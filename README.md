@@ -1,23 +1,25 @@
 # Search Examples
 
-This example shows the example algorithm for both BFS and DFS since the only difference between them is the data structure used to store the neighbor nodes. This program also outputs the total number of states explored and a png showing the states explored as red and the final path found as yellow
+This code includes code that can solve a maze using either DFS (depth first search) or BFS (breadth first search). It outputs solutions on the command line and as a png (the most recent out put is saved in the repo directory as `maze.png`). Three mazes are included in the repo. 
 
 ## How to Use
 
-Make sure `pillow` is installed on your device as it's the dependency to output images. If not, run
+Set up a virtual environment with `pillow`, the image-procesing library used to output solution images. 
 
-`pip install pillow`
+```
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
 
-In the `example` directory, run the command:
+You can also use `poetry` or the package manager of your choice. 
 
-`python maze.py maze.txt`
+The implementation format from the command line is: 
 
-Where `maze.txt` can be the three pre-defined `maze1.txt`, `maze2.txt`, and `maze3.txt`, or you can use the similar syntax to create your own maze!
+`python maze.py <maze-reference>.txt`
 
-In order to change from BFS to DFS or vice versa, find the `solve` function of the `Maze` class, modify and `frontier` data structure to either a `StackFrontier` or a `QueueFrontier` which are implemented already
+There are three mazes you can use in the above in this repo (`maze1.txt`, `maze2.txt`, `maze3.txt`).  You can also try makign a text document of a maze with your own design!
 
-## What to Learn
-
-Check step by step how the `solve` function of the `Maze` class works, since this function is the Python implementation of BFS/DFS search algorithm. Other functions and classes are helpers to produce the maze and help with the final output
+Change the search algorithm used by changing the `Frontier` class assigned in the code. 
 
 **Acknowledgments**: This code is borrowed from [CS50 Artificial Intelligence](https://cs50.harvard.edu/ai/2024/license/)
